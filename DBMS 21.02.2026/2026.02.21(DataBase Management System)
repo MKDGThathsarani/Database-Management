@@ -1,0 +1,33 @@
+ICED 2026.02.21(DataBase Management System)
+
+mysql -u root -p // open the CMD tool 
+show databases; //use to capital leetters
+
+CREATE DATABASE SchoolDB; //Create the new database 
+
+SHOW DATABASES; //Show the database of create database
+
+USE SchoolDB; //we created database go to in SchoolDB. Use the database
+
+CREATE TABLE Student(   //ctrate the table. Table name of Student. "(" add the coloum	Id INT,				//","add the another coloum
+	Name VARCHAR (50),	//","add the another coloum
+	Age INT				//End the coloun"," don't use the ","
+	);					//End of the quorycreated
+	
+SHOW TABLES;  // Show the we created tables of into the SchoolDB database
+
+DESCRIBE Student; //Show the all coloum. use the table name
+DESC Student;	   //Show the all coloum. use the table name
+
+INSERT INTO Students(Id,Name,Age)
+	VALUES
+	(001,'Amaya',15),
+	(002,'Bimal',16),
+	(003,'Sithum',15)
+	;
+
+ SELECT * FROM Students; // see all details. use the table name 
+
+
+
+
