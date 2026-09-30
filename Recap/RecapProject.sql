@@ -1,33 +1,67 @@
--- 1. Database එක හදන්න
+-- ==========================================
+-- 1. DATABASE එක හදන්න
+-- ==========================================
 CREATE DATABASE PracticeDB;
-USE PracticeDB;
 
--- 2. Students table එක හදන්න (; අමතක කරන්න එපා!)
+-- ==========================================
+-- 2. DATABASE එක තෝරන්න (DBeaver එකේදී උඩ dropdown එකෙන් PracticeDB තෝරන්න)
+-- ==========================================
+
+-- ==========================================
+-- 3. TABLES හදන්න (DDL)
+-- ==========================================
 CREATE TABLE Students (
     StudentID INT PRIMARY KEY,
     Name VARCHAR(100),
     Age INT,
-    City VARCHAR(50)
+    City VARCHAR(50),
+    Marks INT   -- DML වලට අවශ්‍ය නිසා මෙතනට එකතු කළා
 );
 
--- 3. Courses table එක හදන්න (; අමතක කරන්න එපා!)
 CREATE TABLE Courses (
     CourseID INT PRIMARY KEY,
     CourseName VARCHAR(100),
     Credits INT
 );
 
--- 4. Data බලන්න (දැන් data නෑ, ඒක normal)
+-- ==========================================
+-- 4. DATA ඇතුළත් කරන්න (DML - INSERT)
+-- ==========================================
+INSERT INTO Students (StudentID, Name, Age, City, Marks) VALUES 
+(1, 'Kamal', 22, 'Colombo', 85),
+(2, 'Nimali', 21, 'Kandy', 92),
+(3, 'Sunil', 23, 'Galle', 78),
+(4, 'Amala', 22, 'Colombo', 88),
+(5, 'Ruwan', 21, 'Matara', 65);
+
+-- ==========================================
+-- 5. DATA බලන්න (DML - SELECT)
+-- ==========================================
 SELECT * FROM Students;
 
--- 5. Table එකේ structure බලන්න
-DESC Students;
+-- ==========================================
+-- 6. DATA වෙනස් කරන්න (DML - UPDATE)
+-- ==========================================
+UPDATE Students SET Marks = 90 WHERE StudentID = 1;
 
--- 6. Email column එක add කරන්න (Emaill නෙවෙයි — Email)
-ALTER TABLE Students ADD Email VARCHAR(50);
+-- වෙනස් වුනාද බලන්න
+SELECT * FROM Students WHERE StudentID = 1;
 
--- 7. Age column එක modify කරන්න
+-- ==========================================
+-- 7. DATA මකන්න (DML - DELETE)
+-- ==========================================
+DELETE FROM Students WHERE StudentID = 5;
+
+-- ඉතුරු data බලන්න
+SELECT * FROM Students;
+
+-- ==========================================
+-- 8. TABLE එකේ හැඩය වෙනස් කරන්න (DDL - ALTER)
+-- ==========================================
+ALTER TABLE Students ADD Email VARCHAR(100);
 ALTER TABLE Students MODIFY Age INT;
 
--- 8. Courses table එක drop කරන්න
+-- ==========================================
+-- 9. TABLE එක මකන්න (DDL - DROP)
+-- ==========================================
 DROP TABLE Courses;
