@@ -71,6 +71,41 @@ select * from Books;
 update Books set Price = 1500 where Book_ID =1;
 select * from Books where Book_ID = 1;
 delete from Authors where Authors_ID = 3;
-						  
+
+select A.Name, B.Title
+from authors a 
+inner join books b on a.Authors_ID = b.Authors_ID ;
+
+INSERT INTO Authors (Name, Country) VALUES ('New Author', 'India');
+
+select A.Name, B.Title
+from authors a 
+Left join books b on a.Authors_ID = b.Authors_ID ;
+
+SELECT A.Name ,B.Title, br.Member_Name  
+FROM Borrowings br
+INNER JOIN Books b ON br.Book_ID = b.Book_ID
+INNER JOIN Authors a ON b.Authors_ID = a.Authors_ID;
+
+SELECT B.Title, br.Member_Name  
+FROM books b
+left JOIN borrowings br ON b.Book_ID = br.Book_ID;
+
+select 
+Name,
+UPPER(Name) as UpperName
+from authors a ;
+
+select 
+Title,
+LENGTH(Title) as TitleLength
+from books b  ;
+
+select 
+Title,
+LENGTH(Title) as TitleLength
+from books b  ;
+
+
 
 
